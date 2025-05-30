@@ -1,0 +1,232 @@
+/* monitor.css - Style for the simplified monitor display */
+
+/* General styles */
+:root {
+    --primary-color: #1a73e8;
+    --secondary-color: #34a853;
+    --alert-color: #ea4335;
+    --background-color: #f5f5f5;
+    --card-background: #ffffff;
+    --border-color: #e0e0e0;
+    --text-color: #333333;
+    --header-color: #212121;
+    --day-shift-color: #0b5394;
+    --night-shift-color: #351c75;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 1.8rem;
+}
+
+#current-time {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+main {
+    padding: 1rem;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 0.5rem;
+    font-size: 0.8rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Dashboard grid layout - vertical layout with day/night as main divisions */
+.dashboard-grid {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 60px; /* Space for footer */
+    height: calc(100vh - 150px); /* Adjust to fit screen minus header and footer */
+}
+
+/* Shift sections */
+.shift-section {
+    background-color: var(--card-background);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.day-shift .shift-title {
+    background-color: var(--day-shift-color);
+    color: white;
+}
+
+.night-shift .shift-title {
+    background-color: var(--night-shift-color);
+    color: white;
+}
+
+.shift-title {
+    padding: 0.8rem 1rem;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.date-label {
+    font-size: 1rem;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-weight: normal;
+}
+
+/* Machine panels inside shift sections */
+.machine-panels {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding: 1rem;
+    flex-grow: 1;
+}
+
+.machine-panel {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 0.5rem;
+    border: 1px solid var(--border-color);
+}
+
+.machine-title {
+    font-size: 1.3rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+/* Alarm cards */
+.alarm-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+}
+
+.alarm-card {
+    background-color: white;
+    border-radius: 4px;
+    padding: 0.5rem;
+    border: 1px solid var(--border-color);
+}
+
+.alarm-card h4 {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.alarm-count {
+    font-size: 0.8rem;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.1rem 0.3rem;
+    border-radius: 12px;
+}
+
+/* Alarm tables */
+.alarm-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.alarm-table th,
+.alarm-table td {
+    padding: 0.4rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.alarm-table th {
+    background-color: #f1f3f4;
+    font-weight: bold;
+}
+
+.alarm-table .status-critical {
+    background-color: rgba(234, 67, 53, 0.1);
+    color: var(--alert-color);
+    font-weight: bold;
+}
+
+/* Responsive layout */
+@media (max-width: 1200px) {
+    .machine-panels {
+        grid-template-columns: 1fr;
+    }
+    
+    .alarm-table {
+        font-size: 0.8rem;
+    }
+}
+
+/* For large screens like factory monitors */
+@media (min-width: 1920px) {
+    body {
+        font-size: 18px;
+    }
+    
+    header h1 {
+        font-size: 2.2rem;
+    }
+    
+    #current-time {
+        font-size: 1.5rem;
+    }
+    
+    .shift-title {
+        font-size: 1.8rem;
+        padding: 0.7rem 1rem;
+    }
+
+    .machine-title {
+        font-size: 1.6rem;
+    }
+    
+    .alarm-card h4 {
+        font-size: 1.2rem;
+    }
+    
+    .alarm-table {
+        font-size: 1.1rem;
+    }
+    
+    .date-label, .alarm-count {
+        font-size: 1rem;
+    }
+}

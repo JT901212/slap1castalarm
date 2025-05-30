@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SLAP1 Casting - Alarm Monitor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/monitor.css') }}">
+</head>
+<body>
+    <header>
+        <h1>SLAP1 Casting - Alarm Monitor</h1>
+        <div id="current-time"></div>
+    </header>
+
+    <main>
+        <div class="dashboard-grid">
+            <!-- Day Shift Section -->
+            <section class="shift-section day-shift">
+                <h2 class="shift-title">Day Shift (07:00-19:00) <span id="day-shift-date" class="date-label"></span></h2>
+                
+                <div class="machine-panels">
+                    <!-- 1A Machine - Day Shift -->
+                    <section class="machine-panel">
+                        <h3 class="machine-title">1A</h3>
+                        
+                        <div class="alarm-cards">
+                            <!-- Today's day shift alarms for 1A -->
+                            <div class="alarm-card">
+                                <h4>Today <span id="today-day-total-1A" class="alarm-count"></span></h4>
+                                <table id="today-day-alarms-1A" class="alarm-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Rank</th>
+                                            <th>Code</th>
+                                            <th>Description</th>
+                                            <th>Count</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- Dynamically inserted -->
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <!-- Yesterday's day shift alarms for 1A -->
+                            <div class="alarm-card">
+                                <h4>Yesterday <span id="yesterday-day-total-1A" class="alarm-count"></span></h4>
+                                <table id="yesterday-day-alarms-1A" class="alarm-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Rank</th>
+                                            <th>Code</th>
+                                            <th>Description</th>
+                                            <th>Count</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- Dynamically inserted -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- 1B Machine - Day Shift -->
+                    <section class="machine-panel">
+                        <h3 class="machine-title">1B</h3>
+                        
+                        <div class="alarm-cards">
+                            <!-- Today's day shift alarms for 1B -->
+                            <div class="alarm-card">
+                                <h4>Today <span id="today-day-total-1B" class="alarm-count"></span></h4>
+                                <table id="today-day-alarms-1B" class="alarm-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Rank</th>
+                                            <th>Code</th>
+                                            <th>Description</th>
+                                            <th>Count</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- Dynamically inserted -->
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <!-- Yesterday's day shift alarms for 1B -->
+                            <div class="alarm-card">
+                                <h4>Yesterday <span id="yesterday-day-total-1B" class="alarm-count"></span></h4>
+                                <table id="yesterday-day-alarms-1B" class="alarm-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Rank</th>
+                                            <th>Code</th>
+                                            <th>Description</th>
+                                            <th>Count</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- Dynamically inserted -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </section>
+
+            <!-- Night Shift Section -->
+            <section class="shift-section night-shift">
+                <h2 class="shift-title">Night Shift (19:00-07:00) <span id="night-shift-date" class="date-label"></span></h2>
+                
+                <div class="machine-panels">
+                    <!-- 1A Machine - Night Shift -->
+                    <section class="machine-panel">
+                        <h3 class="machine-title">1A</h3>
+                        
+                        <div class="alarm-cards">
+                            <!-- Today's night shift alarms for 1A -->
+                            <div class="alarm-card">
+                                <h4>Today <span id="today-night-total-1A" class="alarm-count"></span></h4>
+                                <table id="today-night-alarms-1A" class="alarm-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Rank</th>
+                                            <th>Code</th>
+                                            <th>Description</th>
+                                            <th>Count</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- Dynamically inserted -->
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <!-- Yesterday's night shift alarms for 1A -->
+                            <div class="alarm-card">
+                                <h4>Yesterday <span id="yesterday-night-total-1A" class="alarm-count"></span></h4>
+                                <table id="yesterday-night-alarms-1A" class="alarm-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Rank</th>
+                                            <th>Code</th>
+                                            <th>Description</th>
+                                            <th>Count</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- Dynamically inserted -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- 1B Machine - Night Shift -->
+                    <section class="machine-panel">
+                        <h3 class="machine-title">1B</h3>
+                        
+                        <div class="alarm-cards">
+                            <!-- Today's night shift alarms for 1B -->
+                            <div class="alarm-card">
+                                <h4>Today <span id="today-night-total-1B" class="alarm-count"></span></h4>
+                                <table id="today-night-alarms-1B" class="alarm-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Rank</th>
+                                            <th>Code</th>
+                                            <th>Description</th>
+                                            <th>Count</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- Dynamically inserted -->
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <!-- Yesterday's night shift alarms for 1B -->
+                            <div class="alarm-card">
+                                <h4>Yesterday <span id="yesterday-night-total-1B" class="alarm-count"></span></h4>
+                                <table id="yesterday-night-alarms-1B" class="alarm-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Rank</th>
+                                            <th>Code</th>
+                                            <th>Description</th>
+                                            <th>Count</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- Dynamically inserted -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 PLC Alarm Monitoring System</p>
+        <p>Last Updated: <span id="last-updated"></span></p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/monitor.js') }}"></script>
+</body>
+</html>
